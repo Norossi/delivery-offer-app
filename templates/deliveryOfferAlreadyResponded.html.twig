@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Respond to Offer</title>
+</head>
+<body>
+<h1>You have already responded to this Delivery Offer.</h1>
+<p><strong>Offer ID:</strong> {{ offer.offerId }}</p>
+<p><strong>Pickup Zipcode:</strong> {{ offer.pickupZipcode }}</p>
+<p><strong>Delivery Zipcode:</strong> {{ offer.deliveryZipcode }}</p>
+<p><strong>Delivery Date:</strong> {{ offer.deliveryDate|date('Y-m-d') }}</p>
+<p><strong>Delivery offer status:</strong> {{ offer.status }}</p>
+</body>
+</html>

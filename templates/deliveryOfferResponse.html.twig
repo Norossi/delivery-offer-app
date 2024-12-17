@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Respond to Offer</title>
+</head>
+<body>
+<h1>Respond to Delivery Offer</h1>
+<p><strong>Offer ID:</strong> {{ offer.offerId }}</p>
+<p><strong>Pickup Zipcode:</strong> {{ offer.pickupZipcode }}</p>
+<p><strong>Delivery Zipcode:</strong> {{ offer.deliveryZipcode }}</p>
+<p><strong>Delivery Date:</strong> {{ offer.deliveryDate|date('Y-m-d') }}</p>
+<p>
+    Please select one of the options below:
+</p>
+<form action="/api/delivery-offer/{{ offer.offerId }}/respond" method="POST" style="display: inline;">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="hidden" name="action" value="accept">
+    <button type="submit" style="padding: 10px 15px; background-color: green; color: white; border: none; cursor: pointer;">Accept</button>
+</form>
+<form action="/api/delivery-offer/{{ offer.offerId }}/respond" method="POST" style="display: inline;">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="hidden" name="action" value="decline">
+    <button type="submit" style="padding: 10px 15px; background-color: red; color: white; border: none; cursor: pointer;">Decline</button>
+</form>
+</body>
+</html>
